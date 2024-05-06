@@ -114,7 +114,6 @@ tech_list = ['Artificial intelligence (AI)', 'Biotechnology',
 compare_2017_2022_df['YoY Chg']=compare_2017_2022_df['Percentage_2022']-compare_2017_2022_df['Percentage_2017']
 compare_2017_2022_df['%YoY Chg']=(compare_2017_2022_df['Percentage_2022']-compare_2017_2022_df['Percentage_2017'])/compare_2017_2022_df['Percentage_2017']
 compare_2017_2022_df.dropna(inplace = True)
-compare_2017_2022_df
 
 
 # # Preping Reasons
@@ -128,7 +127,7 @@ reason_not_used_df = sc.table_to_df("27-10-0368-01")
 # In[16]:
 
 
-reason_not_used_df
+
 
 
 # In[17]:
@@ -167,7 +166,7 @@ reason_plot_data_df.dropna(inplace=True)
 reason_plot_data_df.info()
 
 
-# In[25]:
+# In[27]:
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.YETI])
@@ -250,7 +249,7 @@ def update_graph(getgeo, getnaics, getsize, gettech):
                     (compare_2017_2022_df['Enterprise size'] == getsize) &
                     (compare_2017_2022_df['Advanced Technology'].isin(gettech))
     ]
-    
+    df4 = df4.sort_values(by='YoY Chg', ascending=False)
     
     fig_1 = px.scatter(df1, 
                        y='Reason Not Adopted', 
