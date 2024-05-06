@@ -165,11 +165,13 @@ reason_plot_data_df.reset_index(inplace=True)
 reason_plot_data_df.dropna(inplace=True)
 
 
-# In[40]:
+# In[47]:
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.YETI])
 server = app.server
+myTitle = 'Advanced and Emerging Technology Adoption in Canada'
+app.title = myTitle
 markdown_reason = '''
 #### Description
 
@@ -199,7 +201,7 @@ and other types of emerging technologies.
 app.layout = html.Div([
     html.A(href='https://www.linkedin.com/in/john-a-ellis/', target = '_blank', 
            children=html.Img(src='assets/favicon.ico', height=60, width=60, id='cogent-logo', alt='Cogent Analytics' )),
-    html.H1(children='Technology Adoption in Canada', style={'textAlign':'center'}),
+    html.H1(children= myTitle, style={'textAlign':'center'}),
     dcc.Dropdown(reason_plot_data_df.GEO.unique(), 'Canada', id='dropdown-selection-geo'),
     dcc.Dropdown(reason_plot_data_df.NAICS.unique(),'Total, all surveyed industries', id= 'dropdown-selection-naics'),
     dcc.Dropdown(reason_plot_data_df['Enterprise size'].unique(), 'Total, all enterprise sizes', id = 'dropdown-selection-enterprisesize'),
