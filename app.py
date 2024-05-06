@@ -163,10 +163,9 @@ reason_plot_data_df.reset_index(inplace=True)
 
 
 reason_plot_data_df.dropna(inplace=True)
-reason_plot_data_df.info()
 
 
-# In[27]:
+# In[36]:
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.YETI])
@@ -198,7 +197,7 @@ and other types of emerging technologies.
 *This does not constitute an endorsement by Statistics Canada of this product.*
 '''
 app.layout = html.Div([
-    
+    html.Img(src='assets/favicon.ico', height=60, width=60, id='cogent-logo', alt='Cogent Analytics'),
     html.H1(children='Technology Adoption in Canada', style={'textAlign':'center'}),
     dcc.Dropdown(reason_plot_data_df.GEO.unique(), 'Canada', id='dropdown-selection-geo'),
     dcc.Dropdown(reason_plot_data_df.NAICS.unique(),'Total, all surveyed industries', id= 'dropdown-selection-naics'),
