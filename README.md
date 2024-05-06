@@ -5,3 +5,5 @@ A simple Dashboard constructed with Plotly Dash.  The data is from two Statistic
 [Ian Preston](https://github.com/ianepreston)  
 ![https://pandas.pydata.org/docs/index.html](img/pandas.svg)  
 ![https://dash.plotly.com/](img/plotly_logo.svg)
+![https://dash-bootstrap-components.opensource.faculty.ai/](img/dbciconblack128.png)
+### Dash Bootstrap Components

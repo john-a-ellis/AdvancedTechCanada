@@ -1,0 +1,6 @@
+dash
+dash_bootstrap
+numpy
+pandas
+stats_can
+plotly
