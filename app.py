@@ -167,11 +167,11 @@ reason_plot_data_df.dropna(inplace=True)
 reason_plot_data_df.info()
 
 
-# In[24]:
+# In[25]:
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.YETI])
-app.server = server
+server = app.server
 markdown_reason = '''
 #### Description
 
